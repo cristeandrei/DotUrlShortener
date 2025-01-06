@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotUrlShortenerUi", "DotUrlShortenerUi\DotUrlShortenerUi.csproj", "{6EB01CE1-BBCE-4CC5-ACB7-D78C5D44E775}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotUrlShortener.ServiceDefaults", "DotUrlShortener.ServiceDefaults\DotUrlShortener.ServiceDefaults.csproj", "{6FB2825B-E8D5-44EE-9639-0BBC1862CED6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotUrlShortener.AppHost", "DotUrlShortener.AppHost\DotUrlShortener.AppHost.csproj", "{AE11653B-C53C-4FDF-AE14-ED5161CECEDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotUrlShortenerApi", "DotUrlShortenerApi\DotUrlShortenerApi.csproj", "{670C8F81-73EE-493C-BF8B-B075A9E117E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotUrlShortenerApi.Tests", "DotUrlShortenerApi.Tests\DotUrlShortenerApi.Tests.csproj", "{6C1B8921-B1DE-41C1-8019-AF88A193F18A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6EB01CE1-BBCE-4CC5-ACB7-D78C5D44E775}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EB01CE1-BBCE-4CC5-ACB7-D78C5D44E775}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EB01CE1-BBCE-4CC5-ACB7-D78C5D44E775}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EB01CE1-BBCE-4CC5-ACB7-D78C5D44E775}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FB2825B-E8D5-44EE-9639-0BBC1862CED6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FB2825B-E8D5-44EE-9639-0BBC1862CED6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FB2825B-E8D5-44EE-9639-0BBC1862CED6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FB2825B-E8D5-44EE-9639-0BBC1862CED6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE11653B-C53C-4FDF-AE14-ED5161CECEDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE11653B-C53C-4FDF-AE14-ED5161CECEDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE11653B-C53C-4FDF-AE14-ED5161CECEDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE11653B-C53C-4FDF-AE14-ED5161CECEDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{670C8F81-73EE-493C-BF8B-B075A9E117E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{670C8F81-73EE-493C-BF8B-B075A9E117E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{670C8F81-73EE-493C-BF8B-B075A9E117E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{670C8F81-73EE-493C-BF8B-B075A9E117E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C1B8921-B1DE-41C1-8019-AF88A193F18A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C1B8921-B1DE-41C1-8019-AF88A193F18A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C1B8921-B1DE-41C1-8019-AF88A193F18A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C1B8921-B1DE-41C1-8019-AF88A193F18A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
