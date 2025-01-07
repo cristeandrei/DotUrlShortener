@@ -1,3 +1,5 @@
+using DotUrlShortener.ServiceDefaults;
+
 using DotUrlShortenerUi.Clients;
 using DotUrlShortenerUi.Clients.Interfaces;
 using DotUrlShortenerUi.Components;
@@ -9,9 +11,7 @@ builder.AddServiceDefaults();
 builder
     .Services
     .AddHttpClient<IDotUrlShortenerClient, DotUrlShortenerClient>(e =>
-    {
-        e.BaseAddress = new Uri(builder.Configuration["DotUrlShortenerApiEndpointHttps"]!);
-    });
+        e.BaseAddress = new Uri(builder.Configuration["DotUrlShortenerApiEndpointHttps"]!));
 
 // Add services to the container.
 builder.Services.AddRazorComponents();

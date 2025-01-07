@@ -8,5 +8,6 @@ builder
     .WithExternalHttpEndpoints()
     .WithReference(dotUrlShortener);
 
-
-builder.Build().Run();
+builder
+    .Build()
+    .Run();

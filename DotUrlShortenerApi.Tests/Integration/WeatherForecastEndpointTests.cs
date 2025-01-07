@@ -4,18 +4,20 @@ using Microsoft.AspNetCore.Mvc.Testing;
 namespace DotUrlShortenerApi.Tests.Integration;
 
 [TestClass]
-public sealed class WeatherForecastEndpointTests
+internal sealed class WeatherForecastEndpointTests
 {
     [TestMethod]
     [TestCategory(TestCategories.Integration)]
     public async Task GetWeatherForecastShouldReturn()
     {
-        var webApplicationFactory = new WebApplicationFactory<Program>();
+        await using var webApplicationFactory = new WebApplicationFactory<Program>();
 
         var httpClient = webApplicationFactory.CreateClient();
 
-        var response = await httpClient.GetAsync("weatherforecast");
+        var uri = new Uri("weatherforecast");
 
-        Assert.AreEqual(response.IsSuccessStatusCode, true);
+        var response = await httpClient.GetAsync(uri);
+
+        Assert.AreEqual(true, response.IsSuccessStatusCode);
     }
 }

@@ -5,7 +5,7 @@ using FluentAssertions;
 namespace DotUrlShortenerApi.Tests.Unit;
 
 [TestClass]
-public class WeatherForecastsProviderTests
+internal sealed class WeatherForecastsProviderTests
 {
     [TestMethod]
     [TestCategory(TestCategories.Unit)]

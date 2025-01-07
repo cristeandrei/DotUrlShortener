@@ -6,32 +6,21 @@ using Microsoft.Kiota.Serialization.Json;
 
 namespace DotUrlShortenerUi.Clients;
 
-public class DotUrlShortenerClient : IDotUrlShortenerClient
+internal sealed class DotUrlShortenerClient(HttpClient httpClient) : IDotUrlShortenerClient
 {
-    private readonly HttpClient _httpClient;
-    private DotUrlShortenerOpenApiClient _dotUrlShortenerOpenApiClient;
-
-    public DotUrlShortenerClient(HttpClient httpClient)
+    public async Task<IList<OpenApiClients.DotUrlShortener.Models.WeatherForecast>> GetWeatherforecast()
     {
-        var urlShortenerOpenApiClient = new HttpClientRequestAdapter(
+        using var urlShortenerOpenApiClient = new HttpClientRequestAdapter(
             new AnonymousAuthenticationProvider(),
             new JsonParseNodeFactory(),
             new JsonSerializationWriterFactory(),
             httpClient,
             new ObservabilityOptions());
 
-        _dotUrlShortenerOpenApiClient = new DotUrlShortenerOpenApiClient(urlShortenerOpenApiClient);
-    }
+        var dotUrlShortenerOpenApiClient = new DotUrlShortenerOpenApiClient(urlShortenerOpenApiClient);
 
-    public async Task<IList<OpenApiClients.DotUrlShortener.Models.WeatherForecast>> GetWeatherforecast()
-    {
-        var weatherforecast = await _dotUrlShortenerOpenApiClient.Weatherforecast.GetAsync();
+        var weatherForecasts = await dotUrlShortenerOpenApiClient.Weatherforecast.GetAsync();
 
-        if (weatherforecast == null)
-        {
-            return [];
-        }
-
-        return weatherforecast;
+        return weatherForecasts ?? (IList<OpenApiClients.DotUrlShortener.Models.WeatherForecast>)([]);
     }
 }

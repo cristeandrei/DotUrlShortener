@@ -1,6 +1,6 @@
 namespace DotUrlShortenerApi.Tests.Common;
 
-public class TestCategories
+internal static class TestCategories
 {
     public const string Integration = "Integration";
 

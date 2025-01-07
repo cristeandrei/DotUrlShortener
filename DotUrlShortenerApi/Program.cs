@@ -1,3 +1,5 @@
+using DotUrlShortener.ServiceDefaults;
+
 using DotUrlShortenerApi;
 using Scalar.AspNetCore;
 
@@ -14,21 +16,13 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
-    app.MapScalarApiReference(options =>
-    {
-        options.Servers = [];
-    });
+    _ = app.MapOpenApi();
+    _ = app.MapScalarApiReference(static options => options.Servers = []);
 }
 
 app.UseHttpsRedirection();
 
-
-app.MapGet("/weatherforecast", () =>
-    {
-        var forecast = WeatherForecastProvider.GetWeatherForecasts();
-        return forecast;
-    })
+app.MapGet("/weatherforecast", WeatherForecastProvider.GetWeatherForecasts)
     .WithName("GetWeatherForecast");
 
 app.Run();

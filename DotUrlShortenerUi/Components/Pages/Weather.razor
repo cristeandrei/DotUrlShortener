@@ -10,7 +10,7 @@
 
 <p>This component demonstrates showing data.</p>
 
-@if (forecasts == null)
+@if (_forecasts == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -26,7 +26,7 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var forecast in forecasts)
+            @foreach (var forecast in _forecasts)
             {
                 <tr>
                     <td>@forecast.Date?.DateTime.ToShortDateString()</td>
@@ -40,10 +40,10 @@ else
 }
 
 @code {
-    private IList<WeatherForecast> forecasts;
+    private IList<WeatherForecast>? _forecasts;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await DotUrlShortenerClient.GetWeatherforecast();
+        _forecasts = await DotUrlShortenerClient.GetWeatherforecast();
     }
 }
