@@ -17,8 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DotUrlShortenerUi\DotUrlShortenerUi.csproj" />
-    <ProjectReference Include="..\DotUrlShortenerApi\DotUrlShortenerApi.csproj" />
+    <ProjectReference Include="..\DotUrlShortener.Ui\DotUrlShortener.Ui.csproj" />
+    <ProjectReference Include="..\DotUrlShortener.Api\DotUrlShortener.Api.csproj" />
   </ItemGroup>
 
 </Project>
