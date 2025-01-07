@@ -14,7 +14,7 @@ internal sealed class WeatherForecastEndpointTests
 
         var httpClient = webApplicationFactory.CreateClient();
 
-        var uri = new Uri("weatherforecast");
+        var uri = new Uri("/weatherforecast");
 
         var response = await httpClient.GetAsync(uri);
 
