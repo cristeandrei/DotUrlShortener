@@ -1,4 +1,3 @@
-using System.Collections;
 using DotUrlShortener.Ui.Clients.Interfaces;
 using DotUrlShortener.Ui.OpenApiClients.DotUrlShortener;
 using Microsoft.Kiota.Abstractions.Authentication;

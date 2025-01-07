@@ -10,6 +10,6 @@ public sealed class WeatherForecastsProviderTests
     {
         var forecasts = WeatherForecastProvider.GetWeatherForecasts();
 
-        forecasts.Should().BeEmpty();
+        forecasts.Should().NotBeEmpty();
     }
 }
