@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotUrlShortener.Api", "DotU
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotUrlShortener.Api.Tests", "DotUrlShortener.Api.Tests\DotUrlShortener.Api.Tests.csproj", "{6C1B8921-B1DE-41C1-8019-AF88A193F18A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotUrlShortener.Ui.Tests", "DotUrlShortener.Ui.Tests\DotUrlShortener.Ui.Tests.csproj", "{8DD76601-161D-48BA-A0CF-27BB1424227E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{6C1B8921-B1DE-41C1-8019-AF88A193F18A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C1B8921-B1DE-41C1-8019-AF88A193F18A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C1B8921-B1DE-41C1-8019-AF88A193F18A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DD76601-161D-48BA-A0CF-27BB1424227E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DD76601-161D-48BA-A0CF-27BB1424227E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DD76601-161D-48BA-A0CF-27BB1424227E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DD76601-161D-48BA-A0CF-27BB1424227E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
