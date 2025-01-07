@@ -12,7 +12,6 @@
           -->
         <TestingPlatformShowTestsFailure>true</TestingPlatformShowTestsFailure>
         <TestingExtensionsProfile>AllMicrosoft</TestingExtensionsProfile>
-        <RootNamespace>DotUrlShortener.Api.Tests</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
