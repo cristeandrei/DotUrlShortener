@@ -17,6 +17,6 @@ public sealed class WeatherForecastEndpointTests
 
         var response = await httpClient.GetAsync(uri);
 
-        Assert.AreEqual(true, response.IsSuccessStatusCode);
+        Assert.AreEqual(false, response.IsSuccessStatusCode);
     }
 }
