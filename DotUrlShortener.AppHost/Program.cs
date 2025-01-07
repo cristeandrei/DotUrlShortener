@@ -1,9 +1,9 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
-var dotUrlShortener = builder.AddProject<Projects.DotUrlShortenerApi>("doturlshortenerapi");
+var dotUrlShortener = builder.AddProject<Projects.DotUrlShortener_Api>("DotUrlShortener.Api");
 
 builder
-    .AddProject<Projects.DotUrlShortenerUi>("doturlshortenerui")
+    .AddProject<Projects.DotUrlShortener_Ui>("DotUrlShortener.Ui")
     .WithExternalHttpEndpoints()
     .WithReference(dotUrlShortener);
 

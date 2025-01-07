@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>DotUrlShortener.Ui</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DotUrlShortener.ServiceDefaults\DotUrlShortener.ServiceDefaults.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Kiota.Bundle" Version="1.16.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <OpenApiReference Include="./OpenApi/DotUrlShortener/v1.json" />
+  </ItemGroup>
+</Project>
