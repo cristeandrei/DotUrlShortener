@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.Testing;
 namespace DotUrlShortener.Api.Tests.Integration;
 
 [TestClass]
-internal sealed class WeatherForecastEndpointTests
+public sealed class WeatherForecastEndpointTests
 {
     [TestMethod]
     [TestCategory(TestCategories.Integration)]
