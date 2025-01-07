@@ -8,19 +8,25 @@ namespace DotUrlShortenerUi.Clients;
 
 internal sealed class DotUrlShortenerClient(HttpClient httpClient) : IDotUrlShortenerClient
 {
-    public async Task<IList<OpenApiClients.DotUrlShortener.Models.WeatherForecast>> GetWeatherforecast()
+    public async Task<
+        IList<OpenApiClients.DotUrlShortener.Models.WeatherForecast>
+    > GetWeatherforecast()
     {
         using var urlShortenerOpenApiClient = new HttpClientRequestAdapter(
             new AnonymousAuthenticationProvider(),
             new JsonParseNodeFactory(),
             new JsonSerializationWriterFactory(),
             httpClient,
-            new ObservabilityOptions());
+            new ObservabilityOptions()
+        );
 
-        var dotUrlShortenerOpenApiClient = new DotUrlShortenerOpenApiClient(urlShortenerOpenApiClient);
+        var dotUrlShortenerOpenApiClient = new DotUrlShortenerOpenApiClient(
+            urlShortenerOpenApiClient
+        );
 
         var weatherForecasts = await dotUrlShortenerOpenApiClient.Weatherforecast.GetAsync();
 
-        return weatherForecasts ?? (IList<OpenApiClients.DotUrlShortener.Models.WeatherForecast>)([]);
+        return weatherForecasts
+            ?? (IList<OpenApiClients.DotUrlShortener.Models.WeatherForecast>)([]);
     }
 }

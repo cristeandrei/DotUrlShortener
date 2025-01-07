@@ -1,5 +1,4 @@
 using DotUrlShortenerApi.Tests.Common;
-
 using FluentAssertions;
 
 namespace DotUrlShortenerApi.Tests.Unit;

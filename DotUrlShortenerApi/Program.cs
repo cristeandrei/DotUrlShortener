@@ -1,5 +1,4 @@
 using DotUrlShortener.ServiceDefaults;
-
 using DotUrlShortenerApi;
 using Scalar.AspNetCore;
 
