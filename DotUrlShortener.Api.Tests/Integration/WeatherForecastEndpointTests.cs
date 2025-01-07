@@ -1,5 +1,4 @@
-﻿using DotUrlShortener.Api.Tests.Common;
-using Microsoft.AspNetCore.Mvc.Testing;
+﻿using Microsoft.AspNetCore.Mvc.Testing;
 
 namespace DotUrlShortener.Api.Tests.Integration;
 
@@ -7,7 +6,7 @@ namespace DotUrlShortener.Api.Tests.Integration;
 public sealed class WeatherForecastEndpointTests
 {
     [TestMethod]
-    [TestCategory(TestCategories.Integration)]
+    [TestCategory("Integration")]
     public async Task GetWeatherForecastShouldReturn()
     {
         await using var webApplicationFactory = new WebApplicationFactory<Program>();

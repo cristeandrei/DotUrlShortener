@@ -1,4 +1,3 @@
-using DotUrlShortener.Api.Tests.Common;
 using FluentAssertions;
 
 namespace DotUrlShortener.Api.Tests.Unit;
@@ -7,7 +6,6 @@ namespace DotUrlShortener.Api.Tests.Unit;
 public sealed class WeatherForecastsProviderTests
 {
     [TestMethod]
-    [TestCategory(TestCategories.Unit)]
     public void ShouldReturnTheWeatherForecast()
     {
         var forecasts = WeatherForecastProvider.GetWeatherForecasts();
