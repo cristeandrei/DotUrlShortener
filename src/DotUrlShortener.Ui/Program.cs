@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.AddServiceDefaults();
 
 builder.Services.AddHttpClient<IDotUrlShortenerClient, DotUrlShortenerClient>(e =>
-    e.BaseAddress = new Uri(builder.Configuration["DotUrlShortener.ApiEndpointHttps"]!)
+    e.BaseAddress = new Uri(builder.Configuration["HttpResources:DotUrlShortenerApiEndpointHttps"]!)
 );
 
 // Add services to the container.
