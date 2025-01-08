@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>ReduceUrl.Data.Aspire.Migration</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Aspire.Npgsql" Version="9.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ReduceUrl.Data\ReduceUrl.Data.csproj" />
+        <ProjectReference Include="..\ReduceUrl.ServiceDefaults\ReduceUrl.ServiceDefaults.csproj" />
+    </ItemGroup>
+</Project>

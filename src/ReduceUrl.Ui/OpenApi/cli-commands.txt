@@ -1,0 +1,4 @@
+-- dotnet tool install --global Microsoft.OpenApi.Kiota
+-- dotnet add package Microsoft.Kiota.Bundle
+
+kiota generate -l CSharp -c ReduceUrlHttpClient -n ReduceUrl.Ui.OpenApi.Clients.ReduceUrl -d OpenApi/Specifications/ReduceUrl.json -o OpenApi/Clients/ReduceUrl

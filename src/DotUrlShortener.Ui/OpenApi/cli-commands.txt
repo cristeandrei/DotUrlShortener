@@ -1,4 +1,0 @@
--- dotnet tool install --global Microsoft.OpenApi.Kiota
--- dotnet add package Microsoft.Kiota.Bundle
-
-kiota generate -l CSharp -c DotUrlShortenerHttpClient -n DotUrlShortener.Ui.OpenApi.Clients.DotUrlShortener -d OpenApi/Specifications/DotUrlShortener.json -o OpenApi/Clients/DotUrlShortener
