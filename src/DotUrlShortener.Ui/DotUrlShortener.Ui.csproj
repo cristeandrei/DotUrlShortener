@@ -14,6 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <OpenApiReference Include="./OpenApi/DotUrlShortener/v1.json" />
+    <OpenApiReference Include="OpenApi\Specifications\DotUrlShortener.json" />
   </ItemGroup>
 </Project>

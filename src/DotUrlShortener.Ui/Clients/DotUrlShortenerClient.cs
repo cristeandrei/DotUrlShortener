@@ -1,5 +1,6 @@
 using DotUrlShortener.Ui.Clients.Interfaces;
-using DotUrlShortener.Ui.OpenApiClients.DotUrlShortener;
+using DotUrlShortener.Ui.OpenApi.Clients.DotUrlShortener;
+using DotUrlShortener.Ui.OpenApi.Clients.DotUrlShortener.Models;
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 using Microsoft.Kiota.Serialization.Json;
@@ -8,9 +9,7 @@ namespace DotUrlShortener.Ui.Clients;
 
 internal sealed class DotUrlShortenerClient(HttpClient httpClient) : IDotUrlShortenerClient
 {
-    public async Task<
-        IList<OpenApiClients.DotUrlShortener.Models.WeatherForecast>
-    > GetWeatherforecast()
+    public async Task<IList<WeatherForecast>> GetWeatherforecast()
     {
         using var urlShortenerOpenApiClient = new HttpClientRequestAdapter(
             new AnonymousAuthenticationProvider(),
@@ -20,13 +19,10 @@ internal sealed class DotUrlShortenerClient(HttpClient httpClient) : IDotUrlShor
             new ObservabilityOptions()
         );
 
-        var dotUrlShortenerOpenApiClient = new DotUrlShortenerOpenApiClient(
-            urlShortenerOpenApiClient
-        );
+        var dotUrlShortenerOpenApiClient = new DotUrlShortenerHttpClient(urlShortenerOpenApiClient);
 
         var weatherForecasts = await dotUrlShortenerOpenApiClient.Weatherforecast.GetAsync();
 
-        return weatherForecasts
-            ?? (IList<OpenApiClients.DotUrlShortener.Models.WeatherForecast>)([]);
+        return weatherForecasts ?? (IList<WeatherForecast>)([]);
     }
 }

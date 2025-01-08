@@ -1,6 +1,8 @@
+using DotUrlShortener.Ui.OpenApi.Clients.DotUrlShortener.Models;
+
 namespace DotUrlShortener.Ui.Clients.Interfaces;
 
 internal interface IDotUrlShortenerClient
 {
-    Task<IList<OpenApiClients.DotUrlShortener.Models.WeatherForecast>> GetWeatherforecast();
+    Task<IList<WeatherForecast>> GetWeatherforecast();
 }
