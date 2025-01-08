@@ -16,13 +16,17 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotUrlShortener.Ui.Tests", "src\DotUrlShortener.Ui.Tests\DotUrlShortener.Ui.Tests.csproj", "{8DD76601-161D-48BA-A0CF-27BB1424227E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AF980B11-B243-4F62-AF08-1DA94CC8EC35}"
-	ProjectSection(Solution Items) = preProject
+	ProjectSection(SolutionItems) = preProject
 		Directory.Build.props = Directory.Build.props
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotUrlShortener.Data", "src\DotUrlShortener.Data\DotUrlShortener.Data.csproj", "{DE9AF965-C057-4295-9FEC-34402457185C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotUrlShortener.Data.Aspire.Migration", "src\DotUrlShortener.Data.Aspire.Migration\DotUrlShortener.Data.Aspire.Migration.csproj", "{41CC9BE1-B295-4B50-B8A2-1F72A7127344}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,5 +61,13 @@ Global
 		{8DD76601-161D-48BA-A0CF-27BB1424227E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DD76601-161D-48BA-A0CF-27BB1424227E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DD76601-161D-48BA-A0CF-27BB1424227E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE9AF965-C057-4295-9FEC-34402457185C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE9AF965-C057-4295-9FEC-34402457185C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE9AF965-C057-4295-9FEC-34402457185C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE9AF965-C057-4295-9FEC-34402457185C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41CC9BE1-B295-4B50-B8A2-1F72A7127344}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41CC9BE1-B295-4B50-B8A2-1F72A7127344}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41CC9BE1-B295-4B50-B8A2-1F72A7127344}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41CC9BE1-B295-4B50-B8A2-1F72A7127344}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

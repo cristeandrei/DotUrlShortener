@@ -13,6 +13,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\DotUrlShortener.ServiceDefaults\DotUrlShortener.ServiceDefaults.csproj" />
+        <ProjectReference Include="..\DotUrlShortener.Data\DotUrlShortener.Data.csproj" />
     </ItemGroup>
 
     <ItemGroup>

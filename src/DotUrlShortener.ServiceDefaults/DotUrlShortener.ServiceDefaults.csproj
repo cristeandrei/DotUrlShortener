@@ -21,6 +21,7 @@
 
     <ItemGroup>
         <InternalsVisibleTo Include="DotUrlShortener.Api" />
+        <InternalsVisibleTo Include="DotUrlShortener.Data.Aspire.Migration" />
         <InternalsVisibleTo Include="DotUrlShortener.Ui" />
     </ItemGroup>
 
