@@ -23,6 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		LICENSE = LICENSE
 		README.md = README.md
 		.devcontainer\devcontainer.json = .devcontainer\devcontainer.json
+		.devcontainer\devcontainer-post-create-setup.sh = .devcontainer\devcontainer-post-create-setup.sh
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReduceUrl.Data", "src\ReduceUrl.Data\ReduceUrl.Data.csproj", "{DE9AF965-C057-4295-9FEC-34402457185C}"
