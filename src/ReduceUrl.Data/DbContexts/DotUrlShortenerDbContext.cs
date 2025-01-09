@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using ReduceUrl.Data.Entities;
+using ReduceUrl.Data.Models;
 
 namespace ReduceUrl.Data.DbContexts;
 

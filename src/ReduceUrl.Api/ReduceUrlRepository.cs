@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ReduceUrl.Data.DbContexts;
-using ReduceUrl.Data.Entities;
+using ReduceUrl.Data.Models;
 
 namespace ReduceUrl.Api;
 

@@ -1,4 +1,4 @@
-namespace ReduceUrl.Data.Entities;
+namespace ReduceUrl.Data.Models;
 
 public class ReducedUrl
 {

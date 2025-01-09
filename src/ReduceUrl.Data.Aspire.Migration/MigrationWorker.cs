@@ -2,7 +2,7 @@ using System.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using OpenTelemetry.Trace;
 using ReduceUrl.Data.DbContexts;
-using ReduceUrl.Data.Entities;
+using ReduceUrl.Data.Models;
 
 namespace ReduceUrl.Data.Aspire.Migration;
 
