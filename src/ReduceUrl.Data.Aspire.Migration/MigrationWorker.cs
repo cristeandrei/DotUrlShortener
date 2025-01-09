@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using OpenTelemetry.Trace;
 using ReduceUrl.Data.DbContexts;
+using ReduceUrl.Data.Entities;
 
 namespace ReduceUrl.Data.Aspire.Migration;
 
@@ -41,11 +42,7 @@ internal sealed class MigrationWorker(
         CancellationToken cancellationToken
     )
     {
-        Entities.ReducedUrl firstTicket = new()
-        {
-            Path = "Hello",
-            CreationDateTime = DateTime.UtcNow,
-        };
+        var firstTicket = new ReducedUrl() { Path = "Hello", CreationDateTime = DateTime.UtcNow };
 
         var strategy = dbContext.Database.CreateExecutionStrategy();
         await strategy.ExecuteAsync(async () =>

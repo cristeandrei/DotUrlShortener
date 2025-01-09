@@ -1,8 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using ReduceUrl.Data.Entities;
 
 namespace ReduceUrl.Data.DbContexts;
 
 public class ReduceUrlDbContext(DbContextOptions options) : DbContext(options)
 {
-    public DbSet<Entities.ReducedUrl> ReducedUrls { get; set; }
+    public DbSet<ReducedUrl> ReducedUrls { get; set; }
 }

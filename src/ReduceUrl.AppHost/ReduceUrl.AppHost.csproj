@@ -20,6 +20,7 @@
     <ProjectReference Include="..\ReduceUrl.Ui\ReduceUrl.Ui.csproj" />
     <ProjectReference Include="..\ReduceUrl.Api\ReduceUrl.Api.csproj" />
     <ProjectReference Include="..\ReduceUrl.Data.Aspire.Migration\ReduceUrl.Data.Aspire.Migration.csproj" />
+    <ProjectReference Include="..\ReduceUrl.Data\ReduceUrl.Data.csproj" IsAspireProjectResource="false"/>
   </ItemGroup>
 
 </Project>
