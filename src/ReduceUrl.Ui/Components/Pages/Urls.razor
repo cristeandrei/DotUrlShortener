@@ -1,0 +1,45 @@
+﻿@page "/Urls"
+@using ReduceUrl.Ui.Clients.Interfaces
+@using ReduceUrl.Ui.OpenApi.Clients.ReduceUrl.Models
+@attribute [StreamRendering]
+@inject IReduceUrlClient ReduceUrlClient
+
+<PageTitle>Weather</PageTitle>
+
+<h1>Urls</h1>
+
+<p>This component demonstrates showing data.</p>
+
+@if (_reducedUrls == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Path</th>
+                <th aria-label="Creation">Creation Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reducedUrl in _reducedUrls)
+            {
+                <tr>
+                    <td>@reducedUrl.Path</td>
+                    <td>@reducedUrl.CreationDateTime?.DateTime.ToShortDateString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private IList<ReducedUrl>? _reducedUrls;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _reducedUrls = await ReduceUrlClient.GetReduceUrls();
+    }
+}

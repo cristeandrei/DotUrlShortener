@@ -9,7 +9,7 @@ namespace ReduceUrl.Ui.Clients;
 
 internal sealed class ReduceUrlClient(HttpClient httpClient) : IReduceUrlClient
 {
-    public async Task<IList<WeatherForecast>> GetWeatherforecast()
+    public async Task<IList<ReducedUrl>> GetReduceUrls()
     {
         using var httpClientRequestAdapter = new HttpClientRequestAdapter(
             new AnonymousAuthenticationProvider(),
@@ -21,8 +21,8 @@ internal sealed class ReduceUrlClient(HttpClient httpClient) : IReduceUrlClient
 
         var reduceUrlHttpClient = new ReduceUrlHttpClient(httpClientRequestAdapter);
 
-        var weatherForecasts = await reduceUrlHttpClient.Weatherforecast.GetAsync();
+        var reduceUrls = await reduceUrlHttpClient.ReducedUrls.GetAsync();
 
-        return weatherForecasts ?? (IList<WeatherForecast>)([]);
+        return reduceUrls ?? (IList<ReducedUrl>)([]);
     }
 }

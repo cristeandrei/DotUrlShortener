@@ -6,7 +6,8 @@ var postgresdb = postgres.AddDatabase("postgresdb");
 
 builder
     .AddProject<Projects.ReduceUrl_Data_Aspire_Migration>("reduceurldataaspiremigration")
-    .WithReference(postgresdb);
+    .WithReference(postgresdb)
+    .WaitFor(postgresdb);
 
 var reduceUrlApi = builder
     .AddProject<Projects.ReduceUrl_Api>("reduceurlapi")

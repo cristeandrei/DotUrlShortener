@@ -4,5 +4,5 @@ namespace ReduceUrl.Ui.Clients.Interfaces;
 
 internal interface IReduceUrlClient
 {
-    Task<IList<WeatherForecast>> GetWeatherforecast();
+    Task<IList<ReducedUrl>> GetReduceUrls();
 }

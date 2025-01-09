@@ -1,5 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using Npgsql;
 using ReduceUrl.Api;
-using ReduceUrl.Data;
+using ReduceUrl.Data.DbContexts;
 using ReduceUrl.ServiceDefaults;
 using Scalar.AspNetCore;
 
@@ -7,11 +9,22 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
 
-builder.AddDatabase();
+builder.AddNpgsqlDataSource(connectionName: "postgresdb");
+
+builder.Services.AddDbContextPool<ReduceUrlDbContext>(
+    (s, o) =>
+    {
+        var npgsqlDataSource = s.GetRequiredService<NpgsqlDataSource>();
+
+        o.UseNpgsql(npgsqlDataSource);
+    }
+);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+builder.Services.AddScoped<IReduceUrlRepository, ReduceUrlRepository>();
 
 var app = builder.Build();
 
@@ -24,7 +37,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/weatherforecast", WeatherForecastProvider.GetWeatherForecasts)
-    .WithName("GetWeatherForecast");
+app.MapGet(
+        "/reducedUrls",
+        async (IReduceUrlRepository reduceUrlRepository) => await reduceUrlRepository.GetAll()
+    )
+    .WithName("GetReducedUrls");
 
 app.Run();

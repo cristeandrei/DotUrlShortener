@@ -1,24 +1,24 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "ReduceUrl | v1",
+    "title": "ReduceUrl.Api | v1",
     "version": "1.0.0"
   },
   "servers": [
     {
-      "url": "https://localhost:39175"
+      "url": "https://localhost:33779"
     },
     {
-      "url": "http://localhost:39703"
+      "url": "http://localhost:37121"
     }
   ],
   "paths": {
-    "/weatherforecast": {
+    "/reducedUrls": {
       "get": {
         "tags": [
-          "ReduceUrl"
+          "ReduceUrl.Api"
         ],
-        "operationId": "GetWeatherForecast",
+        "operationId": "GetReducedUrls",
         "responses": {
           "200": {
             "description": "OK",
@@ -27,7 +27,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
+                    "$ref": "#/components/schemas/ReducedUrl"
                   }
                 }
               }
@@ -39,29 +39,23 @@
   },
   "components": {
     "schemas": {
-      "WeatherForecast": {
+      "ReducedUrl": {
         "required": [
-          "date",
-          "temperatureC",
-          "summary"
+          "path",
+          "creationDateTime"
         ],
         "type": "object",
         "properties": {
-          "date": {
-            "type": "string",
-            "format": "date"
-          },
-          "temperatureC": {
+          "reducedUrlId": {
             "type": "integer",
             "format": "int32"
           },
-          "summary": {
-            "type": "string",
-            "nullable": true
+          "path": {
+            "type": "string"
           },
-          "temperatureF": {
-            "type": "integer",
-            "format": "int32"
+          "creationDateTime": {
+            "type": "string",
+            "format": "date-time"
           }
         }
       }
@@ -69,7 +63,7 @@
   },
   "tags": [
     {
-      "name": "ReduceUrl"
+      "name": "ReduceUrl.Api"
     }
   ]
 }
