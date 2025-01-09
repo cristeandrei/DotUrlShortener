@@ -8,7 +8,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  validate-pull-request:
 
     runs-on: ubuntu-latest
 
@@ -22,5 +22,7 @@ jobs:
         run: dotnet restore
       - name: Build
         run: dotnet build --no-restore
-      - name: Test
-        run: dotnet test -- --filter TestCategory\!~Integration
+      - name: Test Api
+        run: dotnet run --project ./src/ReduceUrl.Api.Tests/ReduceUrl.Api.Tests.csproj --no-build -- --filter TestCategory\!~Integration
+      - name: Test Ui
+        run: dotnet run --project ./src/ReduceUrl.Ui.Tests/ReduceUrl.Ui.Tests.csproj --no-build -- --filter TestCategory\!~Integration

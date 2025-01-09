@@ -1,0 +1,69 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "ReduceUrl.Api | v1",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://localhost:33779"
+    },
+    {
+      "url": "http://localhost:37121"
+    }
+  ],
+  "paths": {
+    "/reducedUrls": {
+      "get": {
+        "tags": [
+          "ReduceUrl.Api"
+        ],
+        "operationId": "GetReducedUrls",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ReducedUrl"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ReducedUrl": {
+        "required": [
+          "path",
+          "creationDateTime"
+        ],
+        "type": "object",
+        "properties": {
+          "reducedUrlId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "path": {
+            "type": "string"
+          },
+          "creationDateTime": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "ReduceUrl.Api"
+    }
+  ]
+}
