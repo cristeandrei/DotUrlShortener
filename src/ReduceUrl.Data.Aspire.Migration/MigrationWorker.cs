@@ -1,5 +1,7 @@
 using System.Diagnostics;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Storage;
 using OpenTelemetry.Trace;
 using ReduceUrl.Data.DbContexts;
 using ReduceUrl.Data.Models;
@@ -24,6 +26,8 @@ internal sealed class MigrationWorker(
 
             var dbContext = scope.ServiceProvider.GetRequiredService<ReduceUrlDbContext>();
 
+            await EnsureDatabaseAsync(dbContext, cancellationToken);
+
             await dbContext.Database.MigrateAsync(cancellationToken);
 
             await SeedDataAsync(dbContext, cancellationToken);
@@ -35,6 +39,38 @@ internal sealed class MigrationWorker(
         }
 
         hostApplicationLifetime.StopApplication();
+    }
+
+    private static async Task EnsureDatabaseAsync(
+        ReduceUrlDbContext dbContext,
+        CancellationToken cancellationToken
+    )
+    {
+        var dbCreator = dbContext.GetService<IRelationalDatabaseCreator>();
+
+        var strategy = dbContext.Database.CreateExecutionStrategy();
+
+        await strategy.ExecuteAsync(async () =>
+        {
+            // Create the database if it does not exist.
+            // Do this first so there is then a database to start a transaction against.
+            // Also create __EFMigrationsHistory if it doesn't exist, ef core will check it when executing the migration
+            // If it doesn't find the table, it will create it. But ef wil also log an error, and we want to avoid that since its a false positive
+            if (!await dbCreator.ExistsAsync(cancellationToken))
+            {
+                await dbCreator.CreateAsync(cancellationToken);
+
+                await dbContext.Database.ExecuteSqlInterpolatedAsync(
+                    $"""
+                    CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+                    "MigrationId" text NOT NULL,
+                    "ProductVersion" text NOT NULL,
+                    CONSTRAINT "PK_HistoryRow" PRIMARY KEY ("MigrationId"));
+                    """,
+                    cancellationToken
+                );
+            }
+        });
     }
 
     private static async Task SeedDataAsync(
