@@ -8,8 +8,8 @@
     "ghcr.io/devcontainers/features/git:1": {
       "version": "latest"
     },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
     "ghcr.io/elanhasson/devcontainer-features/dotnet-aspire-daily:1": {},
-    "ghcr.io/nikiforovall/devcontainer-features/dotnet-aspire:1": {},
     "ghcr.io/nikiforovall/devcontainer-features/dotnet-csharpier:1": {},
     "ghcr.io/jpawlowski/devcontainer-features/powershell-extended:2": {
       "updateModulesHelp": true,
