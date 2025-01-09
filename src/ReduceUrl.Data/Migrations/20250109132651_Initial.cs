@@ -16,22 +16,29 @@ namespace ReduceUrl.Data.Migrations
                 name: "ReducedUrls",
                 columns: table => new
                 {
-                    ReducedUrlId = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    ReducedUrlId = table
+                        .Column<int>(type: "integer", nullable: false)
+                        .Annotation(
+                            "Npgsql:ValueGenerationStrategy",
+                            NpgsqlValueGenerationStrategy.IdentityByDefaultColumn
+                        ),
                     Path = table.Column<string>(type: "text", nullable: false),
-                    CreationDateTime = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    CreationDateTime = table.Column<DateTime>(
+                        type: "timestamp with time zone",
+                        nullable: false
+                    ),
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ReducedUrls", x => x.ReducedUrlId);
-                });
+                }
+            );
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "ReducedUrls");
+            migrationBuilder.DropTable(name: "ReducedUrls");
         }
     }
 }

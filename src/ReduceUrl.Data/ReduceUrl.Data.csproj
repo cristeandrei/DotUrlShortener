@@ -16,7 +16,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <InternalsVisibleTo Include="ReduceUrl.Api" />
+        <InternalsVisibleTo Include="ReduceUrl.AppHost" />
         <InternalsVisibleTo Include="ReduceUrl.Data.Aspire.Migration" />
     </ItemGroup>
 </Project>

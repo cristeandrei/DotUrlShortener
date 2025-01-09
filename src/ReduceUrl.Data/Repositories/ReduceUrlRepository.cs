@@ -1,8 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using ReduceUrl.Data.DbContexts;
 using ReduceUrl.Data.Models;
+using ReduceUrl.Data.Repositories.Interfaces;
 
-namespace ReduceUrl.Api;
+namespace ReduceUrl.Data.Repositories;
 
 internal sealed class ReduceUrlRepository(ReduceUrlDbContext reduceUrlDbContext)
     : IReduceUrlRepository
@@ -11,9 +12,4 @@ internal sealed class ReduceUrlRepository(ReduceUrlDbContext reduceUrlDbContext)
     {
         return await reduceUrlDbContext.ReducedUrls.ToListAsync(cancellationToken);
     }
-}
-
-internal interface IReduceUrlRepository
-{
-    Task<IList<ReducedUrl>> GetAll(CancellationToken cancellationToken = default);
 }

@@ -1,7 +1,5 @@
-using Microsoft.EntityFrameworkCore;
-using Npgsql;
-using ReduceUrl.Api;
-using ReduceUrl.Data.DbContexts;
+using ReduceUrl.Data;
+using ReduceUrl.Data.Repositories.Interfaces;
 using ReduceUrl.ServiceDefaults;
 using Scalar.AspNetCore;
 
@@ -9,22 +7,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
 
-builder.AddNpgsqlDataSource(connectionName: "postgresdb");
-
-builder.Services.AddDbContextPool<ReduceUrlDbContext>(
-    (s, o) =>
-    {
-        var npgsqlDataSource = s.GetRequiredService<NpgsqlDataSource>();
-
-        o.UseNpgsql(npgsqlDataSource);
-    }
-);
+builder.AddReduceUrlDataAccessLayer();
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
-
-builder.Services.AddScoped<IReduceUrlRepository, ReduceUrlRepository>();
 
 var app = builder.Build();
 
