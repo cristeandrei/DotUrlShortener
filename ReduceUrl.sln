@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReduceUrl.Data", "src\Reduc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReduceUrl.Data.Aspire.Migration", "src\ReduceUrl.Data.Aspire.Migration\ReduceUrl.Data.Aspire.Migration.csproj", "{41CC9BE1-B295-4B50-B8A2-1F72A7127344}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReduceUrl.AppHost.Tests", "src\ReduceUrl.AppHost.Tests\ReduceUrl.AppHost.Tests.csproj", "{CC17E939-0F18-45BD-A177-63FECCBFBB77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,5 +71,9 @@ Global
 		{41CC9BE1-B295-4B50-B8A2-1F72A7127344}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41CC9BE1-B295-4B50-B8A2-1F72A7127344}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41CC9BE1-B295-4B50-B8A2-1F72A7127344}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC17E939-0F18-45BD-A177-63FECCBFBB77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC17E939-0F18-45BD-A177-63FECCBFBB77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC17E939-0F18-45BD-A177-63FECCBFBB77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC17E939-0F18-45BD-A177-63FECCBFBB77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
