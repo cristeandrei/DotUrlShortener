@@ -1,9 +1,15 @@
+using System.Net;
+using Aspire.Hosting.ApplicationModel;
+using Aspire.Hosting.Testing;
+using Microsoft.Extensions.DependencyInjection;
+
 namespace ReduceUrl.AppHost.Tests;
 
 [TestClass]
 public class ReduceUrlGetUrlsTests
 {
     [TestMethod]
+    [TestCategory("Integration")]
     public async Task GetUrlsReturnsOkStatusCode()
     {
         // Arrange
