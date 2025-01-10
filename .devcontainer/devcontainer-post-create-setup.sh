@@ -1,5 +1,3 @@
-#!/bin/sh
-
 set -x
 
 echo "setup dotnet tools"
