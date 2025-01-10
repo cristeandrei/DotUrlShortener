@@ -1,10 +1,13 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/dotnet
 {
-  "name": "C# (.NET)",
+  "name": "ReduceUrl",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "image": "mcr.microsoft.com/devcontainers/dotnet:1-9.0-bookworm",
+  "image": "Dockerfile",
   "features": {
+    "ghcr.io/devcontainers/features/dotnet:2": {
+      "workloads": "aspire"
+    },
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
 
@@ -20,11 +23,25 @@
   // }
 
   // Use 'postCreateCommand' to run commands after the container is created.
-   "postCreateCommand": "bash ./.devcontainer/devcontainer-post-create-setup.sh"
+  //"postCreateCommand": ""
 
   // Configure tool-specific properties.
-  // "customizations": {},
-
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+        // Add the IDs of extensions you want installed when the container is created.
+        "extensions": [
+            "ms-dotnettools.csdevkit",
+            "editorconfig.editorconfig",
+            "streetsidesoftware.code-spell-checker",
+            "visualstudioexptteam.vscodeintellicode",
+            "visualstudioexptteam.intellicode-api-usage-examples",
+            "ms-azuretools.vscode-docker"
+        ],
+        "settings": {
+        }
+    }
+},
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "root"
 }
